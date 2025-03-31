@@ -14,8 +14,10 @@ prepare:
 .PHONY: up
 up:
 	@echo "--> Starting all docker containers..."
+	@chmod -R 777 storage/
 	@./vendor/bin/sail up --force-recreate -d
-	@./vendor/bin/sail art storage:link
+	@./vendor/bin/sail art migrate --force
+
 
 .PHONY: key-generate
 key-generate:

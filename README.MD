@@ -26,3 +26,12 @@ make
 
 # 3. Acesse a aplicação, via browser, no endereço http://localhost:8000
 ```
+
+## EXECUÇÕES SUBSEQUENTES DO PROJETO
+```bash
+# Sobe todos os containers (verificar arquivo Makefile):
+make up
+
+# Para todos os containers:
+make down
+```
