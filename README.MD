@@ -16,7 +16,7 @@ O Homelab está configurado com virtualização bare-metal (proxmox), com 3 cont
 
 Totalizando `1 manager` e `3 nós`.
 
-- Acesso Web: [http://sandbox.gestordevalores.com.br](http://sandbox.gestordevalores.com.br)
+- Acesso Externo via Web: [http://sandbox.gestordevalores.com.br](http://sandbox.gestordevalores.com.br)
 
 ---
 ## DEPENDÊNCIAS DOS CONTAINERS APLICAÇÃO EM LOCALHOST
@@ -59,3 +59,9 @@ make down
 ---
 ## VERIFICAÇÃO DE E-MAILS
 Você pode verificar os e-mails recebidos, em localhost, no endereço [http://localhost:8025](http://localhost:8025)
+
+---
+## MONITORAMENTO
+Acesse os serviços:
+- Prometheus: http://localhost:9090
+- Grafana: http://localhost:3000 (usuário: admin, senha: admin) -> Conforme arquivo `.env.example` e `.env`

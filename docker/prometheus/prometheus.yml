@@ -1,0 +1,11 @@
+global:
+  scrape_interval: 15s  # Intervalo de coleta de métricas
+
+scrape_configs:
+  - job_name: 'laravel'  # Configuração para sua aplicação
+    static_configs:
+      - targets: ['laravel.test:80']  # Endereço do serviço Laravel na rede Docker
+
+  - job_name: 'prometheus'  # Monitoramento do próprio Prometheus
+    static_configs:
+      - targets: ['localhost:9090']
