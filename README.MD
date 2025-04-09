@@ -1,6 +1,12 @@
 # PROJETO FINAL DE PÓS GRADUAÇÃO - DEVOPS
 Esse é um estudo de caso para implantação de aplicação orquestrada com `Docker Swarm` contendo `4 réplicas`, probe `liveness` e `redness` e também monitoramento com `Prometheus` e `Grafana`.
 
+---
+## ACESSOS À APLICAÇÃO
+- Acesso WEB => [http://devops-skate-events.duckdns.org](http://devops-skate-events.duckdns.org)
+- Github => [https://github.com/icarojobs/devops-skate-events](https://github.com/icarojobs/devops-skate-events)
+
+---
 ## TESTANDO A APLICAÇÃO EM LOCALHOST
 Garanta que você tenha o `docker`, `docker compose`, `git`, `curl` e `make` devidamente instalado e configurado.
 Você garantir essas dependências com o seguinte comando:
@@ -27,6 +33,7 @@ make
 # 3. Acesse a aplicação, via browser, no endereço http://localhost:8000
 ```
 
+---
 ## EXECUÇÕES SUBSEQUENTES DO PROJETO
 ```bash
 # Sobe todos os containers (verificar arquivo Makefile):
@@ -35,3 +42,7 @@ make up
 # Para todos os containers:
 make down
 ```
+
+---
+## VERIFICAÇÃO DE E-MAILS
+Você pode verificar os e-mails recebidos, em localhost, no endereço [http://localhost:8025](http://localhost:8025)
