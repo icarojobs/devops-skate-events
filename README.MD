@@ -105,4 +105,7 @@ docker stack deploy -c deploy.yml devops_skate_events_stack
 
 # Para remover a stack, digite
 docker stack rm devops_skate_events_stack
+
+# Para inspecionar um serviço
+docker service inspect --pretty <SERVICE-ID>
 ```
