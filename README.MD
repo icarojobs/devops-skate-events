@@ -16,7 +16,7 @@ O Homelab está configurado com virtualização bare-metal (proxmox), com 3 cont
 
 Totalizando `1 manager` e `3 nós`.
 
-- Acesso Externo via Web: [http://sandbox.gestordevalores.com.br](http://sandbox.gestordevalores.com.br)
+- Acesso Externo via Web: [https://sandbox.gestordevalores.com.br](https://sandbox.gestordevalores.com.br)
 
 ---
 ## DEPENDÊNCIAS DOS CONTAINERS APLICAÇÃO EM LOCALHOST
@@ -44,7 +44,7 @@ make
 
 # 4. Acesse a aplicação, via browser, no endereço http://IP_DO_MANAGER:8000
 ```
-Para ver a aplicação em funcionamento, acesse [http://sandbox.gestordevalores.com.br](http://sandbox.gestordevalores.com.br)
+Para ver a aplicação em funcionamento, acesse [https://sandbox.gestordevalores.com.br](https://sandbox.gestordevalores.com.br)
 
 ---
 ## EXECUÇÕES SUBSEQUENTES DO PROJETO

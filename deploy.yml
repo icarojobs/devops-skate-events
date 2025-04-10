@@ -75,39 +75,10 @@ services:
       MYSQL_USER: sail
       MYSQL_PASSWORD: password
     healthcheck:
-      test: [ "CMD", "mysqladmin", "ping", "-h", "mysql", "-u", "sail", "-ppassword" ]
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "sail", "-ppassword"]
       interval: 5s
       timeout: 10s
       retries: 5
-
-  prometheus:
-    image: prom/prometheus:latest
-    deploy:
-      mode: global
-    configs:
-      - source: prometheus_config
-        target: /etc/prometheus/prometheus.yml
-    volumes:
-      - prometheus_data:/prometheus
-    networks:
-      - app_network
-    ports:
-      - target: 9090
-        published: 9090
-        protocol: tcp
-
-  grafana:
-    image: grafana/grafana:latest
-    deploy:
-      replicas: 1
-    volumes:
-      - grafana_data:/var/lib/grafana
-    networks:
-      - app_network
-    ports:
-      - target: 3000
-        published: 3000
-        protocol: tcp
 
 networks:
   app_network:
@@ -116,13 +87,5 @@ networks:
 volumes:
   mysql_data:
     driver: local
-  prometheus_data:
-    driver: local
-  grafana_data:
-    driver: local
   traefik_certs:
     driver: local
-
-configs:
-  prometheus_config:
-    file: ./docker/prometheus/prometheus.yml
