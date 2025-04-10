@@ -65,3 +65,44 @@ Você pode verificar os e-mails recebidos, em localhost, no endereço [http://lo
 Acesse os serviços:
 - Prometheus: http://localhost:9090
 - Grafana: http://localhost:3000 (usuário: admin, senha: admin) -> Conforme arquivo `.env.example` e `.env`
+
+---
+
+## BUILD DAS IMAGENS
+```bash
+# Repositório: mob2you/devops-skate-events
+# Exemplo: docker push mob2you/devops-skate-events:tagname
+
+# Construindo imagem da aplicação
+make build
+
+# ou
+docker build -t mob2you/devops-skate-events/sail-8.4-app:latest .
+
+# Enviando imagem construída para docker hub
+make push
+
+# ou
+docker push mob2you/devops-skate-events:latest
+```
+---
+
+## DEPLOY NO DOCKER SWARM
+Acesse o manager e faça o seguinte:
+```bash
+# 1. Crie o diretório /docker com as configurações personalizadas
+mkdir -p docker/prometheus # mesmas configurações do diretório docker do projeto, no arquivo prometheus.yml
+
+# 2. Copie o arquivo deploy.yml para o 'swarm-manager', em ~/projects/devops-skate-events
+
+# 3. Adicione o arquivo .env na raiz do projeto do 'swarm-manager', em ~/projects/devops-skate-events
+
+# 4. Crie a rede overlay manualmente
+docker network create --driver=overlay app_network
+
+# 5. Execute sua stack
+docker stack deploy -c deploy.yml devops_skate_events_stack
+
+# Para remover a stack, digite
+docker stack rm devops_skate_events_stack
+```

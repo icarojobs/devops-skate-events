@@ -47,3 +47,18 @@ down:
 
 .PHONY:	restart
 restart:	down up
+
+.PHONY: build
+build:
+	@echo "--> Building docker image..."
+	@docker build -t mob2you/devops-skate-events/sail-8.4-app:latest .
+
+.PHONY: build-no-cache
+build-no-cache:
+	@echo "--> Building docker image..."
+	@docker build --no-cache -t mob2you/devops-skate-events:latest . --progress=plain
+
+.PHONY: push
+push:
+	@echo "--> Sending docker built image to registry..."
+	@docker push mob2you/devops-skate-events:latest
